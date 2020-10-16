@@ -1,0 +1,23 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">ToDoList</h1>
+    <form method="POST">
+        <input type="text" name="dolist" placeholder="your task">
+        <button type="submit">submit</button>
+    </form>
+    <form method="GET">
+        @{
+            string[] dolist=Model.allTask as string [];
+        
+        for (int i=0;i<dolist.Length;i++)
+        {
+        <label>@dolist[i]</label><br>
+        }
+        }
+    </form>
+</div>
