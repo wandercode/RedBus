@@ -1,23 +1,45 @@
 @page
-@model IndexModel
+@model ToDoIndexModel
+@{
+    Layout = "_ToDoListLayout";
+}
 @{
     ViewData["Title"] = "Home page";
 }
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
 <div class="text-center">
+    <div class="row">
+        <div class="col-1 text-white text-center"></div>
+        <div class="col-10 bg-dark text-white text-center">
     <h1 class="display-4">ToDoList</h1>
     <form method="POST">
-        <input type="text" name="dolist" placeholder="your task">
-        <button type="submit">submit</button>
-    </form>
-    <form method="GET">
-        @{
-            string[] dolist=Model.allTask as string [];
-        
-        for (int i=0;i<dolist.Length;i++)
+        <input type="text" name="dolist" placeholder="your task" class="bg-white text-dark">
+        <button type="submit">submit</button><br>
+    
+    
+        @for (int i=0;i<Model.allTask.Length;i++)
         {
-        <label>@dolist[i]</label><br>
+            <label><input type="checkbox" value="">@Model.allTask[i]</label><br>
         }
-        }
+        
+          
     </form>
+        </div>
+        <div class="col-1 text-white text-center"></div>
+    </div>
 </div>
+</div>
+</body>
+</html>
