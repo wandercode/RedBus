@@ -75,12 +75,13 @@
       <p><a href="#">Link</a></p>
       <p><a href="#">Link</a></p>
     </div>
+    
     <div class="col-sm-8 text-left"> 
-      <h1>REDBUS</h1>
-      <p> Grab your seats and get your destination </p>
-      <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
+      <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">
@@ -92,11 +93,7 @@
     </div>
   </div>
 </div>
-<div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
