@@ -1,0 +1,32 @@
+@page  "/RedBus/List"
+@model BusListModel
+@{
+    Layout = "_RBLayout";
+}
+@{
+    ViewData["Title"] = "Bus Details";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Book Bus</h1>
+    <!--<label>@Model.BusList[0].Destination</label>-->
+    <form class="form-horizontal" method="post">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Arrival</th>
+                <th>Place</th>
+            </tr>
+
+       @for (int i = 0; i < Model.BusList.Count; i++)
+        {
+            <tr>
+            <td>@Model.BusList[i].BusName</td>
+            <td>@Model.BusList[i].BusArrival</td>
+            <td>@Model.BusList[i].Destination</td>
+        </tr>
+        }
+       </table>
+    </form> 
+</div>
+
